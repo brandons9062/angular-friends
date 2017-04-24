@@ -1,6 +1,6 @@
 # Angular Friends
 <img src="https://devmounta.in/img/logowhiteblue.png" width="250" align="right">
-
+ 
 ### Introduction
 
 We will be creating a searchable, filterable list of friends.
@@ -371,12 +371,14 @@ See https://docs.angularjs.org/api/ng/filter/orderBy for more details.
 <details>
   <summary>`index.html`</summary>
   ```html
-  <select class="input-medium" ng-model="sortProp">
+  <select class="input-medium" ng-options="name as friend.name for name in friends track by friend.name" ng-model="sortProp">
+<!--
       <option value="name">Name</option>
       <option value="friend_count">#Friends</option>
       <option value="location.city">City</option>
       <option value="location.state">State</option>
       <option value="location.country">Country</option>
+-->
   </select>
 
   <select class="input-medium" ng-model="sortDirection">
